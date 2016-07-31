@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>测试页面</title>
+    <script src="jquery.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("#btn-ok").click(function () {
+                $("#requestString").val("...");
+                $.ajax({
+                    url: "/",
+                    data: $("#postString").val(),
+                    type: "post",
+                    success: function (result) {
+                        $("#requestString").val(result);
+                    }
+                });
+            });
+
+
+
+        })
+
+
+
+    </script>
+</head>
+<body>
+    <br />
+    <textarea id="postString" style="width: 100%; height: 300px;">
+{
+    "cmd": "aaa",
+    "token": "",
+    "version": "1",
+    "pageNo": 0,
+    "onePageNum": 10,
+    "params": 
+    {
+        "platform": "android",
+        "version": "1.0.0"
+    }
+}
+    </textarea><br />
+    <input type="button" id="btn-ok" value="查询" /><br />
+    <textarea id="requestString" style="width: 100%; height: 400px;"></textarea><br />
+
+</body>
+</html>
