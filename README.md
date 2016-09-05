@@ -37,3 +37,10 @@
 
 2.4 直接返回需要的对象值 
   return new APIResultJson { resultNote = "xxxxxxx" };
+  
+
+更多说明
+http://www.cnblogs.com/super-ln/p/emrys-api.html
+
+
+
