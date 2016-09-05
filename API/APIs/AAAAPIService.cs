@@ -19,6 +19,7 @@ namespace Emrys.API.APIs
         /// <returns></returns>
         public override APIResult Process()
         {
+
             // 1、获取参数
             // 1.1、所有参数均在Request里，Request可以获取封装以后所有的接收数据
             string cmd = Reqeust.cmd;
@@ -57,7 +58,10 @@ namespace Emrys.API.APIs
 
             // 2.4 直接返回需要的对象值 
             //return new APIResultJson { resultNote = "xxxxxxx" };
-             
+
+            // 3 获取登录信息
+            int userId = WorkContext.UserId;
+
 
             return APIJson(new { name = "emrys" });
         }

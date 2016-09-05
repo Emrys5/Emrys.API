@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Web; 
+using System.Web;
 
 namespace Emrys.API
 {
@@ -59,21 +59,20 @@ namespace Emrys.API
                 APINotNeedToken nt = (APINotNeedToken)Attribute.GetCustomAttribute(t, typeof(APINotNeedToken));
                 if (nt == null || (!nt.NotNeedToken))
                 {
-                    //// 需要验证 
-                    //using (TrackingEntities trackingDB = new TrackingEntities())
+                    // 如果需要验证  
+
+                    //  根据token获取用户信息 
+                    //var user = GetUser(req.token) ;
+                    //if (user == null)
                     //{
-                    //    // 获取用户信息
-                    //    var user = trackingDB.t_user.Where(i => i.login_token == req.token).FirstOrDefault();
-                    //    if (user == null)
-                    //    {
-                    //        // 判断Token是否失效
-                    //        throw new APIException(200, "Token失效。");
-                    //    }
-                    //    req.APIWorkContext = new APIWorkContext();
-                    //    req.APIWorkContext.UserId = Convert.ToInt32(user.user_id);
-                    //    req.APIWorkContext.UserEmail = user.email;
+                    //    // 判断Token是否失效
+                    //    throw new APIException(200, "Token失效。");
                     //}
-                }  
+                    //req.APIWorkContext = new APIWorkContext();
+                    //req.APIWorkContext.UserId = Convert.ToInt32(user.user_id);
+                    //req.APIWorkContext.UserEmail = user.email;
+
+                }
                 // 反射创建对象
                 object APIservices = System.Reflection.Assembly.GetExecutingAssembly().CreateInstance(fullName, true, System.Reflection.BindingFlags.CreateInstance, null, null, null, null);
                 // 转化成类对象
