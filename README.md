@@ -40,7 +40,7 @@
   
 
 更多说明
-http://www.cnblogs.com/super-ln/p/emrys-api.html
+http://www.cnblogs.com/emrys5/p/emrys-api.html
 
 
 
